@@ -1,9 +1,10 @@
-import Navbar from "./user-wise/components/navbar/Navbar";
+import CreditCard from "./components/cards/CreditCard";
+// import Navbar from "./user-wise/components/navbar/Navbar";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <CreditCard />
     </>
   );
 }
