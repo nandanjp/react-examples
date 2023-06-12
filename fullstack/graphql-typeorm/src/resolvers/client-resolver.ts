@@ -1,15 +1,20 @@
 import { Client } from "../entities/Client";
 import { MyContext } from "src/types";
-import { Ctx, Query } from "type-graphql";
+import { Arg, Ctx, Query } from "type-graphql";
 
 export class ClientResolver
 {
 
     @Query(() => [Client])
-    people(
-        @Ctx() { em }: MyContext
-    ): Promise<Client[]>
+    clients(): Promise<Client[]>
     {
         return Client.find();
+    }
+
+    @Query(() => Client)
+    client(@Ctx() { em }: MyContext, @Arg("input") id: number): Promise<Client | null>
+    {
+        const getClient = Client.createQueryBuilder("user").where("user.id = :id", { id }).getOne();
+        return getClient;
     }
 }
