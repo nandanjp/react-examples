@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import getPokemon from "../requests/pokemonRequest";
 import PokemonCard from "./PokemonCard";
@@ -44,6 +44,10 @@ const PokemonList = (props: PokemonListType) => {
     }
     setPokemonCards(cards);
   };
+
+  useEffect(() => {
+    retrieveMons();
+  }, []);
 
   return (
     <div className="grid grid-flow-row grid-cols-2 gap-12 items-center justify-center place-items-center">
