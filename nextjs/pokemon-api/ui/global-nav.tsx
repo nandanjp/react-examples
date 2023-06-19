@@ -16,7 +16,7 @@ export function GlobalNav() {
       <div className="flex h-14 items-center py-4 px-4 lg:h-auto">
         <Link href="/" className="group w-full items-center gap-x-2">
           <div className="flex items-center h-14 lg:h-auto p-4">
-            <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
+            <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-100 transition ease-in-out duration-200 hover:-translate-y-1 hover:translate-x-1">
               Pokemon/Music API
             </h3>
           </div>
@@ -26,15 +26,15 @@ export function GlobalNav() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
+        className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden transition ease-in-out duration-200"
       >
-        <div className="font-medium text-gray-100 group-hover:text-gray-400">
+        <div className="font-medium text-gray-100 hover:text-gray-500 transition ease-in-out duration-200">
           Menu
         </div>
         {isOpen ? (
-          <XMarkIcon className="block w-6 text-gray-400" />
+          <XMarkIcon className="block w-6 text-gray-400 hover:text-gray-500 animate-fadeIn" />
         ) : (
-          <Bars3Icon className="block w-6 text-gray-400" />
+          <Bars3Icon className="block w-6 text-gray-400 hover:text-gray-500 animate-fadeIn" />
         )}
       </button>
 
@@ -81,7 +81,7 @@ function GlobalNavItem({
       onClick={close}
       href={`/${item.slug}`}
       className={clsx(
-        "block rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300",
+        "block rounded-md px-3 py-2 text-sm font-medium hover:text-white transition ease-in-out duration-300 hover:translate-x-1 hover:-translate-y-1",
         {
           "text-gray-400 hover:bg-gray-800": !isActive,
           "text-white": isActive,
