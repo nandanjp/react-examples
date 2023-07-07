@@ -1,10 +1,10 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import searchImages, { UnsplashResponse } from "./utils/api";
 import ImageList from "./components/ImageList";
 import SearchBar from "./components/SearchBar";
 
 const App = () => {
-  const [searchQuery, setSearchQuery] = useState<string>();
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [imageLinks, setImageLinks] = useState<string[]>([]);
 
   useEffect(() => {
