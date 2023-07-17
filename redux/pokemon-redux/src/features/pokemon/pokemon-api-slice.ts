@@ -39,8 +39,8 @@ const transformErrorResponse = (response: { status: string | number; }, _: Fetch
     offset: number | void;
 }) => response.status;
 
-const pokemonApiReducer = createApi({
-    reducerPath: "api",
+export const pokemonApiReducer = createApi({
+    reducerPath: "pokemonApi",
     baseQuery: fetchBaseQuery({
         baseUrl: "https://pokeapi.co/api/v2"
     }),

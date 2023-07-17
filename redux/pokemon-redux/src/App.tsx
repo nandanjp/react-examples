@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import AbiltiesTable from "./pages/AbiltiesTable";
+import EggGroupTable from "./pages/EggGroupTable";
+import EncounterConditionsTable from "./pages/EncounterConditionsTable";
+import EncounterMethodsTable from "./pages/EncounterMethodsTable";
+import GendersTable from "./pages/GendersTable";
+import GenerationsTable from "./pages/GenerationsTable";
+import LocationsTable from "./pages/LocationsTable";
+import PokemonTable from "./pages/PokemonTable";
+import RegionsTable from "./pages/RegionsTable";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="min-h-screen p-8 grid grid-cols-1 lg:grid-cols-2 grid-flow-row justify-center gap-4 flex-wrap">
+        <PokemonTable />
+        <EggGroupTable />
+        <EncounterConditionsTable />
+        <EncounterMethodsTable />
+        <GendersTable />
+        <GenerationsTable />
+        <AbiltiesTable />
+        <LocationsTable />
+        <RegionsTable />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

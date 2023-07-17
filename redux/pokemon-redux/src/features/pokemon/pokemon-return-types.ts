@@ -9,9 +9,14 @@ export interface Ability
     id: number,
     name: string,
     is_main_series: boolean,
-    generation: RelationType[],
-    effect_entries: RelationType[],
-    pokemon: RelationType[];
+    generation: RelationType,
+    effect_entries: {
+        effect: string;
+    }[],
+    pokemon: {
+        is_hidden: boolean,
+        pokemon: RelationType;
+    }[];
 }
 
 export interface EggGroup
@@ -43,7 +48,7 @@ export interface Gender
     name: string,
     pokemon_species_details: {
         rate: number,
-        pokemon_species: RelationType[];
+        pokemon_species: RelationType;
     }[],
     required_for_evolution: RelationType[];
 }
@@ -61,7 +66,7 @@ export interface Location
 {
     id: number,
     name: string,
-    region: RelationType[];
+    region: RelationType;
 }
 
 interface PokemonSprite
@@ -96,15 +101,15 @@ export interface Pokemon
     weight: number,
     abilities: {
         is_hidden: boolean,
-        ability: RelationType[];
-    },
+        ability: RelationType;
+    }[],
     moves: {
-        move: RelationType[];
-    },
+        move: RelationType;
+    }[],
     species: RelationType[],
     sprites: PokemonSprite,
     stats: PokemonStat[],
-    type: PokemonType[];
+    types: PokemonType[];
 }
 
 export interface Region
